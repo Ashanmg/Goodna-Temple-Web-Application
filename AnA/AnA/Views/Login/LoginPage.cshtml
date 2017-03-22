@@ -1,0 +1,36 @@
+﻿@model AnA.ViewModel.Ali_LoginViewModel
+
+@{
+    ViewBag.Title = "LoginPage";
+}
+<div class="col-sm-12">
+    <div class="Container">
+        @*<img src="~/Images/registration-icon.png" />*@
+        <div class="Container-content">
+            @using (Html.BeginForm("LoginPage", "Login", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <p class="Label"> Login </p>
+                <hr />
+                @Html.ValidationSummary(true)
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "loginInput", @placeholder = "Enter username" })<br />
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+                <div class="form-group">
+                    @Html.PasswordFor(m => m.Password, new { @class = "loginInput", @placeholder = "Enter password" })<br />
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <div class="form-group">
+                    @Html.ActionLink("Fogot your password?", "")
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Login" class="ClickButton" />
+                </div>
+                <div class="form-group">
+                    @Html.ActionLink("Register", "Register", "Login")
+                </div>
+            }
+        </div>
+    </div>
+</div>

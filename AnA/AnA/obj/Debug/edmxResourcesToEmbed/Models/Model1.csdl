@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEB_API2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ALI_DESIGNATION">
+    <Key>
+      <PropertyRef Name="DSG_ID" />
+    </Key>
+    <Property Name="DSG_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DSG_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SALARY" Type="Int32" />
+    <Property Name="DSG_DEPARTMENT" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ALI_INNER_EMP_DSG" Relationship="Self.FK__ALI_INNER__DSG_I__15502E78" FromRole="ALI_DESIGNATION" ToRole="ALI_INNER_EMP_DSG" />
+  </EntityType>
+  <EntityType Name="ALI_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMP_NUMBER" />
+    </Key>
+    <Property Name="EMP_NUMBER" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMP_FIRSTNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EMP_SURNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="EMP_DISPLAYNAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="EMP_NIC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="EMP_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ALI_INNER_EMP_DSG" Relationship="Self.FK__ALI_INNER__EMP_N__145C0A3F" FromRole="ALI_EMPLOYEE" ToRole="ALI_INNER_EMP_DSG" />
+  </EntityType>
+  <EntityType Name="ALI_INNER_EMP_DSG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EMP_NUMBER" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DSG_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ALI_DESIGNATION" Relationship="Self.FK__ALI_INNER__DSG_I__15502E78" FromRole="ALI_INNER_EMP_DSG" ToRole="ALI_DESIGNATION" />
+    <NavigationProperty Name="ALI_EMPLOYEE" Relationship="Self.FK__ALI_INNER__EMP_N__145C0A3F" FromRole="ALI_INNER_EMP_DSG" ToRole="ALI_EMPLOYEE" />
+  </EntityType>
+  <EntityType Name="ALI_LOGINDTLS">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__ALI_INNER__DSG_I__15502E78">
+    <End Role="ALI_DESIGNATION" Type="Self.ALI_DESIGNATION" Multiplicity="1" />
+    <End Role="ALI_INNER_EMP_DSG" Type="Self.ALI_INNER_EMP_DSG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALI_DESIGNATION">
+        <PropertyRef Name="DSG_ID" />
+      </Principal>
+      <Dependent Role="ALI_INNER_EMP_DSG">
+        <PropertyRef Name="DSG_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ALI_INNER__EMP_N__145C0A3F">
+    <End Role="ALI_EMPLOYEE" Type="Self.ALI_EMPLOYEE" Multiplicity="1" />
+    <End Role="ALI_INNER_EMP_DSG" Type="Self.ALI_INNER_EMP_DSG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ALI_EMPLOYEE">
+        <PropertyRef Name="EMP_NUMBER" />
+      </Principal>
+      <Dependent Role="ALI_INNER_EMP_DSG">
+        <PropertyRef Name="EMP_NUMBER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WEB_API2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ALI_DESIGNATION" EntityType="Self.ALI_DESIGNATION" />
+    <EntitySet Name="ALI_EMPLOYEE" EntityType="Self.ALI_EMPLOYEE" />
+    <EntitySet Name="ALI_INNER_EMP_DSG" EntityType="Self.ALI_INNER_EMP_DSG" />
+    <EntitySet Name="ALI_LOGINDTLS" EntityType="Self.ALI_LOGINDTLS" />
+    <AssociationSet Name="FK__ALI_INNER__DSG_I__15502E78" Association="Self.FK__ALI_INNER__DSG_I__15502E78">
+      <End Role="ALI_DESIGNATION" EntitySet="ALI_DESIGNATION" />
+      <End Role="ALI_INNER_EMP_DSG" EntitySet="ALI_INNER_EMP_DSG" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ALI_INNER__EMP_N__145C0A3F" Association="Self.FK__ALI_INNER__EMP_N__145C0A3F">
+      <End Role="ALI_EMPLOYEE" EntitySet="ALI_EMPLOYEE" />
+      <End Role="ALI_INNER_EMP_DSG" EntitySet="ALI_INNER_EMP_DSG" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

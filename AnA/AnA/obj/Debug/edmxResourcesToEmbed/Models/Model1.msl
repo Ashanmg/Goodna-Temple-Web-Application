@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WEB_API2StoreContainer" CdmEntityContainer="WEB_API2Entities">
+    <EntitySetMapping Name="ALI_DESIGNATION">
+      <EntityTypeMapping TypeName="WEB_API2.ALI_DESIGNATION">
+        <MappingFragment StoreEntitySet="ALI_DESIGNATION">
+          <ScalarProperty Name="DSG_ID" ColumnName="DSG_ID" />
+          <ScalarProperty Name="DSG_NAME" ColumnName="DSG_NAME" />
+          <ScalarProperty Name="SALARY" ColumnName="SALARY" />
+          <ScalarProperty Name="DSG_DEPARTMENT" ColumnName="DSG_DEPARTMENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ALI_EMPLOYEE">
+      <EntityTypeMapping TypeName="WEB_API2.ALI_EMPLOYEE">
+        <MappingFragment StoreEntitySet="ALI_EMPLOYEE">
+          <ScalarProperty Name="EMP_NUMBER" ColumnName="EMP_NUMBER" />
+          <ScalarProperty Name="EMP_FIRSTNAME" ColumnName="EMP_FIRSTNAME" />
+          <ScalarProperty Name="EMP_SURNAME" ColumnName="EMP_SURNAME" />
+          <ScalarProperty Name="EMP_DISPLAYNAME" ColumnName="EMP_DISPLAYNAME" />
+          <ScalarProperty Name="EMP_NIC" ColumnName="EMP_NIC" />
+          <ScalarProperty Name="EMP_EMAIL" ColumnName="EMP_EMAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ALI_INNER_EMP_DSG">
+      <EntityTypeMapping TypeName="WEB_API2.ALI_INNER_EMP_DSG">
+        <MappingFragment StoreEntitySet="ALI_INNER_EMP_DSG">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EMP_NUMBER" ColumnName="EMP_NUMBER" />
+          <ScalarProperty Name="DSG_ID" ColumnName="DSG_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ALI_LOGINDTLS">
+      <EntityTypeMapping TypeName="WEB_API2.ALI_LOGINDTLS">
+        <MappingFragment StoreEntitySet="ALI_LOGINDTLS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

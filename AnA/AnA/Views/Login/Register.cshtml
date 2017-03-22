@@ -1,0 +1,36 @@
+﻿@model AnA.ViewModel.Ali_RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+<div class="RegisterContainer">
+    <div class="RegisterContainer-content">
+        @using (Html.BeginForm("Register", "Login", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <p class="Label"> Register </p>
+            <hr />
+            <br />
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "RegisterInput", @placeholder = "Enter username" })<br />
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.Password, new { @class = "RegisterInput", @placeholder = "Enter password" })<br />
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "RegisterInput", @placeholder = "Confirm password" })<br />
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register" class="ClickButton" />
+            </div>
+            <div class="form-group">
+                @Html.ActionLink("Login", "LoginPage", "Login")
+            </div>
+        }
+    </div>
+</div>
+
