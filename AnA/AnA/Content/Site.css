@@ -1,8 +1,8 @@
 ﻿body {
     margin: 0px;
     padding: 0px;
-    /*background-image:url("../Images/backGroundImage.jpg");*/
-    background-color:rgba(12, 54, 103, 0.81);
+    background-image:url("../Images/5599186-wallpapers-blue.jpg");
+    /*background-color:rgba(12, 54, 103, 0.81);*/
 
 }
 
@@ -159,6 +159,26 @@ input[type="checkbox"].input-validation-error {
   display: none;
 }
 
+.nav-page-topbar .topbar-right{
+    float: right;
+    margin-top: 8px;
+}
+
+.nav-page-topbar .topbar-right-clear{
+    float: right;
+    margin-right: 45px;
+}
+
+.nav-page-topbar .topbar-right img {
+  float: none;
+  margin: 0 auto;
+  width: 80%;
+  height: 80%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
 .nav-page-topbar .toggle-btn .icon-bar{
     display:block;
     width:22px;
@@ -197,6 +217,15 @@ input[type="checkbox"].input-validation-error {
 }
 .nav-side-menu .toggle-btn {
   display: none;
+}
+.nav-side-menu img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
 }
 .nav-side-menu ul,
 .nav-side-menu li {
