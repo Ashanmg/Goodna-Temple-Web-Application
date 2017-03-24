@@ -13,7 +13,7 @@ namespace AnA.ViewModel
         public string UserName { get; set; }
 
         [Required]
-        [property: MaxLength(20, ErrorMessage = "Maximum length is 20"), MinLength(10, ErrorMessage = "Minimum length is 5")]
+        [property: MaxLength(20, ErrorMessage = "Maximum length is 20"), MinLength(5, ErrorMessage = "Minimum length is 5")]
         public string Password { get; set; }
 
         [Required]

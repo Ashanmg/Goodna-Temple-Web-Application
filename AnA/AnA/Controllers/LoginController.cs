@@ -10,7 +10,7 @@ namespace AnA.Controllers
 {
     public class LoginController : Controller
     {
-        private WEB_API2Entities db = new WEB_API2Entities();
+        private Goodna_TempleEntities db = new Goodna_TempleEntities();
         // GET: /Login/
         public ActionResult LoginPage()
         {
@@ -27,8 +27,8 @@ namespace AnA.Controllers
             {
                 try
                 {
-                    var details = db.ALI_LOGINDTLS.Single(A => A.UserName == User.UserName && A.Password == User.Password);
-                    if (details.UserName != null)
+                    var details = db.M2000_WP_GOODNA_USER_ACCOUNTS.Single(A => A.USR_NAME == User.UserName && A.PSSWORD == User.Password);
+                    if (details.USR_NAME != null)
                     {
                         return RedirectToAction("MainPage", "Home");
                     }
@@ -61,11 +61,11 @@ namespace AnA.Controllers
             {
                 if(NewUser.Password == NewUser.ConfirmPassword)
                 {
-                    var empDetails = new ALI_LOGINDTLS();
-                    empDetails.UserName = NewUser.UserName;
-                    empDetails.Password = NewUser.Password;
+                    var empDetails = new M2000_WP_GOODNA_USER_ACCOUNTS();
+                    empDetails.USR_NAME = NewUser.UserName;
+                    empDetails.PSSWORD = NewUser.Password;
 
-                    db.ALI_LOGINDTLS.Add(empDetails);
+                    db.M2000_WP_GOODNA_USER_ACCOUNTS.Add(empDetails);
                     db.SaveChanges();
                     //
                 }

@@ -1,77 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="WEB_API2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="ALI_DESIGNATION">
-    <Key>
-      <PropertyRef Name="DSG_ID" />
-    </Key>
-    <Property Name="DSG_ID" Type="varchar" MaxLength="6" Nullable="false" />
-    <Property Name="DSG_NAME" Type="varchar" MaxLength="50" />
-    <Property Name="SALARY" Type="int" />
-    <Property Name="DSG_DEPARTMENT" Type="varchar" MaxLength="60" />
-  </EntityType>
-  <EntityType Name="ALI_EMPLOYEE">
+<Schema Namespace="Goodna_TempleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Goodna_Temple.dbo.M2000_WP_GOODNA_USER_ACCOUNTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M2000_WP_GOODNA_USER_ACCOUNTS">
     <Key>
       <PropertyRef Name="EMP_NUMBER" />
     </Key>
     <Property Name="EMP_NUMBER" Type="varchar" MaxLength="6" Nullable="false" />
-    <Property Name="EMP_FIRSTNAME" Type="varchar" MaxLength="30" />
-    <Property Name="EMP_SURNAME" Type="varchar" MaxLength="30" />
-    <Property Name="EMP_DISPLAYNAME" Type="varchar" MaxLength="60" />
-    <Property Name="EMP_NIC" Type="varchar" MaxLength="10" />
-    <Property Name="EMP_EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="200" />
+    <Property Name="USR_NAME" Type="varchar" MaxLength="60" />
+    <Property Name="PSSWORD" Type="varchar" MaxLength="300" />
   </EntityType>
-  <EntityType Name="ALI_INNER_EMP_DSG">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="EMP_NUMBER" Type="varchar" MaxLength="6" Nullable="false" />
-    <Property Name="DSG_ID" Type="varchar" MaxLength="6" Nullable="false" />
-  </EntityType>
-  <EntityType Name="ALI_LOGINDTLS">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="UserName" Type="varchar" MaxLength="20" />
-    <Property Name="Password" Type="varchar" MaxLength="20" />
-  </EntityType>
-  <Association Name="FK__ALI_INNER__DSG_I__15502E78">
-    <End Role="ALI_DESIGNATION" Type="Self.ALI_DESIGNATION" Multiplicity="1" />
-    <End Role="ALI_INNER_EMP_DSG" Type="Self.ALI_INNER_EMP_DSG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ALI_DESIGNATION">
-        <PropertyRef Name="DSG_ID" />
-      </Principal>
-      <Dependent Role="ALI_INNER_EMP_DSG">
-        <PropertyRef Name="DSG_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__ALI_INNER__EMP_N__145C0A3F">
-    <End Role="ALI_EMPLOYEE" Type="Self.ALI_EMPLOYEE" Multiplicity="1" />
-    <End Role="ALI_INNER_EMP_DSG" Type="Self.ALI_INNER_EMP_DSG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ALI_EMPLOYEE">
-        <PropertyRef Name="EMP_NUMBER" />
-      </Principal>
-      <Dependent Role="ALI_INNER_EMP_DSG">
-        <PropertyRef Name="EMP_NUMBER" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="WEB_API2StoreContainer">
-    <EntitySet Name="ALI_DESIGNATION" EntityType="Self.ALI_DESIGNATION" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ALI_EMPLOYEE" EntityType="Self.ALI_EMPLOYEE" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ALI_INNER_EMP_DSG" EntityType="Self.ALI_INNER_EMP_DSG" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ALI_LOGINDTLS" EntityType="Self.ALI_LOGINDTLS" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ALI_INNER__DSG_I__15502E78" Association="Self.FK__ALI_INNER__DSG_I__15502E78">
-      <End Role="ALI_DESIGNATION" EntitySet="ALI_DESIGNATION" />
-      <End Role="ALI_INNER_EMP_DSG" EntitySet="ALI_INNER_EMP_DSG" />
-    </AssociationSet>
-    <AssociationSet Name="FK__ALI_INNER__EMP_N__145C0A3F" Association="Self.FK__ALI_INNER__EMP_N__145C0A3F">
-      <End Role="ALI_EMPLOYEE" EntitySet="ALI_EMPLOYEE" />
-      <End Role="ALI_INNER_EMP_DSG" EntitySet="ALI_INNER_EMP_DSG" />
-    </AssociationSet>
+  <EntityContainer Name="Goodna_TempleModelStoreContainer">
+    <EntitySet Name="M2000_WP_GOODNA_USER_ACCOUNTS" EntityType="Self.M2000_WP_GOODNA_USER_ACCOUNTS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[M2000_WP_GOODNA_USER_ACCOUNTS].[EMP_NUMBER] AS [EMP_NUMBER], 
+[M2000_WP_GOODNA_USER_ACCOUNTS].[EMAIL] AS [EMAIL], 
+[M2000_WP_GOODNA_USER_ACCOUNTS].[USR_NAME] AS [USR_NAME], 
+[M2000_WP_GOODNA_USER_ACCOUNTS].[PSSWORD] AS [PSSWORD]
+FROM [dbo].[M2000_WP_GOODNA_USER_ACCOUNTS] AS [M2000_WP_GOODNA_USER_ACCOUNTS]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

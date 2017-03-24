@@ -4,13 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4846f565f97c4b4d9f828b6a56fa765e" Name="Diagram1">
-        <EntityTypeShape EntityType="WEB_API2.ALI_DESIGNATION" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_API2.ALI_EMPLOYEE" Width="1.5" PointX="1.5" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_API2.ALI_INNER_EMP_DSG" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="WEB_API2.ALI_LOGINDTLS" Width="1.5" PointX="5.375" PointY="3.5" IsExpanded="true" />
-        <AssociationConnector Association="WEB_API2.FK__ALI_INNER__DSG_I__15502E78" ManuallyRouted="false" />
-        <AssociationConnector Association="WEB_API2.FK__ALI_INNER__EMP_N__145C0A3F" ManuallyRouted="false" />
+      <Diagram DiagramId="01ee2b6fab1a48d9a442f7b6f885d966" Name="Diagram1">
+        <EntityTypeShape EntityType="Goodna_TempleModel.M2000_WP_GOODNA_USER_ACCOUNTS" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

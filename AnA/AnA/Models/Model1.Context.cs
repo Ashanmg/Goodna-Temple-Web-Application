@@ -13,10 +13,10 @@ namespace AnA.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WEB_API2Entities : DbContext
+    public partial class Goodna_TempleEntities : DbContext
     {
-        public WEB_API2Entities()
-            : base("name=WEB_API2Entities")
+        public Goodna_TempleEntities()
+            : base("name=Goodna_TempleEntities")
         {
         }
     
@@ -25,9 +25,6 @@ namespace AnA.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<ALI_DESIGNATION> ALI_DESIGNATION { get; set; }
-        public DbSet<ALI_EMPLOYEE> ALI_EMPLOYEE { get; set; }
-        public DbSet<ALI_INNER_EMP_DSG> ALI_INNER_EMP_DSG { get; set; }
-        public DbSet<ALI_LOGINDTLS> ALI_LOGINDTLS { get; set; }
+        public DbSet<M2000_WP_GOODNA_USER_ACCOUNTS> M2000_WP_GOODNA_USER_ACCOUNTS { get; set; }
     }
 }

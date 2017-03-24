@@ -357,6 +357,17 @@ input[type="checkbox"].input-validation-error {
     border: 1px solid transparent;
     border-radius: 4px;*/
   }
+  .nav-page-topbar .topbar-right img {
+  float: none;
+  /*margin: 0 auto;*/
+  margin-right:0px;
+  width: 80%;
+  height: 80%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+  }
+
   .brand {
     text-align: left !important;
     font-size: 22px;

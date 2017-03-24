@@ -8,7 +8,7 @@ using AnA.Models;
 
 namespace AnA.ViewModel
 {
-    public class Ali_LoginViewModel : ALI_LOGINDTLS
+    public class Ali_LoginViewModel
     {
         [Key]
         public int id { get; set; }

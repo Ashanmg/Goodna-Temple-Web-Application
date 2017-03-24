@@ -4,207 +4,58 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WEB_API2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ALI_DESIGNATION">
-          <Key>
-            <PropertyRef Name="DSG_ID" />
-          </Key>
-          <Property Name="DSG_ID" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="DSG_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="SALARY" Type="int" />
-          <Property Name="DSG_DEPARTMENT" Type="varchar" MaxLength="60" />
-        </EntityType>
-        <EntityType Name="ALI_EMPLOYEE">
+      <Schema Namespace="Goodna_TempleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Goodna_Temple.dbo.M2000_WP_GOODNA_USER_ACCOUNTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="M2000_WP_GOODNA_USER_ACCOUNTS">
           <Key>
             <PropertyRef Name="EMP_NUMBER" />
           </Key>
           <Property Name="EMP_NUMBER" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="EMP_FIRSTNAME" Type="varchar" MaxLength="30" />
-          <Property Name="EMP_SURNAME" Type="varchar" MaxLength="30" />
-          <Property Name="EMP_DISPLAYNAME" Type="varchar" MaxLength="60" />
-          <Property Name="EMP_NIC" Type="varchar" MaxLength="10" />
-          <Property Name="EMP_EMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="200" />
+          <Property Name="USR_NAME" Type="varchar" MaxLength="60" />
+          <Property Name="PSSWORD" Type="varchar" MaxLength="300" />
         </EntityType>
-        <EntityType Name="ALI_INNER_EMP_DSG">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="EMP_NUMBER" Type="varchar" MaxLength="6" Nullable="false" />
-          <Property Name="DSG_ID" Type="varchar" MaxLength="6" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ALI_LOGINDTLS">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="varchar" MaxLength="20" />
-          <Property Name="Password" Type="varchar" MaxLength="20" />
-        </EntityType>
-        <Association Name="FK__ALI_INNER__DSG_I__15502E78">
-          <End Role="ALI_DESIGNATION" Type="Self.ALI_DESIGNATION" Multiplicity="1" />
-          <End Role="ALI_INNER_EMP_DSG" Type="Self.ALI_INNER_EMP_DSG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ALI_DESIGNATION">
-              <PropertyRef Name="DSG_ID" />
-            </Principal>
-            <Dependent Role="ALI_INNER_EMP_DSG">
-              <PropertyRef Name="DSG_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ALI_INNER__EMP_N__145C0A3F">
-          <End Role="ALI_EMPLOYEE" Type="Self.ALI_EMPLOYEE" Multiplicity="1" />
-          <End Role="ALI_INNER_EMP_DSG" Type="Self.ALI_INNER_EMP_DSG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ALI_EMPLOYEE">
-              <PropertyRef Name="EMP_NUMBER" />
-            </Principal>
-            <Dependent Role="ALI_INNER_EMP_DSG">
-              <PropertyRef Name="EMP_NUMBER" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="WEB_API2StoreContainer">
-          <EntitySet Name="ALI_DESIGNATION" EntityType="Self.ALI_DESIGNATION" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ALI_EMPLOYEE" EntityType="Self.ALI_EMPLOYEE" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ALI_INNER_EMP_DSG" EntityType="Self.ALI_INNER_EMP_DSG" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ALI_LOGINDTLS" EntityType="Self.ALI_LOGINDTLS" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__ALI_INNER__DSG_I__15502E78" Association="Self.FK__ALI_INNER__DSG_I__15502E78">
-            <End Role="ALI_DESIGNATION" EntitySet="ALI_DESIGNATION" />
-            <End Role="ALI_INNER_EMP_DSG" EntitySet="ALI_INNER_EMP_DSG" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ALI_INNER__EMP_N__145C0A3F" Association="Self.FK__ALI_INNER__EMP_N__145C0A3F">
-            <End Role="ALI_EMPLOYEE" EntitySet="ALI_EMPLOYEE" />
-            <End Role="ALI_INNER_EMP_DSG" EntitySet="ALI_INNER_EMP_DSG" />
-          </AssociationSet>
+        <EntityContainer Name="Goodna_TempleModelStoreContainer">
+          <EntitySet Name="M2000_WP_GOODNA_USER_ACCOUNTS" EntityType="Self.M2000_WP_GOODNA_USER_ACCOUNTS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[M2000_WP_GOODNA_USER_ACCOUNTS].[EMP_NUMBER] AS [EMP_NUMBER], 
+[M2000_WP_GOODNA_USER_ACCOUNTS].[EMAIL] AS [EMAIL], 
+[M2000_WP_GOODNA_USER_ACCOUNTS].[USR_NAME] AS [USR_NAME], 
+[M2000_WP_GOODNA_USER_ACCOUNTS].[PSSWORD] AS [PSSWORD]
+FROM [dbo].[M2000_WP_GOODNA_USER_ACCOUNTS] AS [M2000_WP_GOODNA_USER_ACCOUNTS]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="WEB_API2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="ALI_DESIGNATION">
-          <Key>
-            <PropertyRef Name="DSG_ID" />
-          </Key>
-          <Property Name="DSG_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DSG_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SALARY" Type="Int32" />
-          <Property Name="DSG_DEPARTMENT" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ALI_INNER_EMP_DSG" Relationship="Self.FK__ALI_INNER__DSG_I__15502E78" FromRole="ALI_DESIGNATION" ToRole="ALI_INNER_EMP_DSG" />
-        </EntityType>
-        <EntityType Name="ALI_EMPLOYEE">
+      <Schema Namespace="Goodna_TempleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="M2000_WP_GOODNA_USER_ACCOUNTS">
           <Key>
             <PropertyRef Name="EMP_NUMBER" />
           </Key>
           <Property Name="EMP_NUMBER" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="EMP_FIRSTNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="EMP_SURNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="EMP_DISPLAYNAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
-          <Property Name="EMP_NIC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="EMP_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="ALI_INNER_EMP_DSG" Relationship="Self.FK__ALI_INNER__EMP_N__145C0A3F" FromRole="ALI_EMPLOYEE" ToRole="ALI_INNER_EMP_DSG" />
+          <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="USR_NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PSSWORD" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="ALI_INNER_EMP_DSG">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="EMP_NUMBER" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="DSG_ID" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ALI_DESIGNATION" Relationship="Self.FK__ALI_INNER__DSG_I__15502E78" FromRole="ALI_INNER_EMP_DSG" ToRole="ALI_DESIGNATION" />
-          <NavigationProperty Name="ALI_EMPLOYEE" Relationship="Self.FK__ALI_INNER__EMP_N__145C0A3F" FromRole="ALI_INNER_EMP_DSG" ToRole="ALI_EMPLOYEE" />
-        </EntityType>
-        <EntityType Name="ALI_LOGINDTLS">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <Association Name="FK__ALI_INNER__DSG_I__15502E78">
-          <End Role="ALI_DESIGNATION" Type="Self.ALI_DESIGNATION" Multiplicity="1" />
-          <End Role="ALI_INNER_EMP_DSG" Type="Self.ALI_INNER_EMP_DSG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ALI_DESIGNATION">
-              <PropertyRef Name="DSG_ID" />
-            </Principal>
-            <Dependent Role="ALI_INNER_EMP_DSG">
-              <PropertyRef Name="DSG_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ALI_INNER__EMP_N__145C0A3F">
-          <End Role="ALI_EMPLOYEE" Type="Self.ALI_EMPLOYEE" Multiplicity="1" />
-          <End Role="ALI_INNER_EMP_DSG" Type="Self.ALI_INNER_EMP_DSG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ALI_EMPLOYEE">
-              <PropertyRef Name="EMP_NUMBER" />
-            </Principal>
-            <Dependent Role="ALI_INNER_EMP_DSG">
-              <PropertyRef Name="EMP_NUMBER" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="WEB_API2Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ALI_DESIGNATION" EntityType="Self.ALI_DESIGNATION" />
-          <EntitySet Name="ALI_EMPLOYEE" EntityType="Self.ALI_EMPLOYEE" />
-          <EntitySet Name="ALI_INNER_EMP_DSG" EntityType="Self.ALI_INNER_EMP_DSG" />
-          <EntitySet Name="ALI_LOGINDTLS" EntityType="Self.ALI_LOGINDTLS" />
-          <AssociationSet Name="FK__ALI_INNER__DSG_I__15502E78" Association="Self.FK__ALI_INNER__DSG_I__15502E78">
-            <End Role="ALI_DESIGNATION" EntitySet="ALI_DESIGNATION" />
-            <End Role="ALI_INNER_EMP_DSG" EntitySet="ALI_INNER_EMP_DSG" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ALI_INNER__EMP_N__145C0A3F" Association="Self.FK__ALI_INNER__EMP_N__145C0A3F">
-            <End Role="ALI_EMPLOYEE" EntitySet="ALI_EMPLOYEE" />
-            <End Role="ALI_INNER_EMP_DSG" EntitySet="ALI_INNER_EMP_DSG" />
-          </AssociationSet>
+        <EntityContainer Name="Goodna_TempleEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="M2000_WP_GOODNA_USER_ACCOUNTS" EntityType="Self.M2000_WP_GOODNA_USER_ACCOUNTS" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WEB_API2StoreContainer" CdmEntityContainer="WEB_API2Entities">
-          <EntitySetMapping Name="ALI_DESIGNATION">
-            <EntityTypeMapping TypeName="WEB_API2.ALI_DESIGNATION">
-              <MappingFragment StoreEntitySet="ALI_DESIGNATION">
-                <ScalarProperty Name="DSG_ID" ColumnName="DSG_ID" />
-                <ScalarProperty Name="DSG_NAME" ColumnName="DSG_NAME" />
-                <ScalarProperty Name="SALARY" ColumnName="SALARY" />
-                <ScalarProperty Name="DSG_DEPARTMENT" ColumnName="DSG_DEPARTMENT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ALI_EMPLOYEE">
-            <EntityTypeMapping TypeName="WEB_API2.ALI_EMPLOYEE">
-              <MappingFragment StoreEntitySet="ALI_EMPLOYEE">
+        <EntityContainerMapping StorageEntityContainer="Goodna_TempleModelStoreContainer" CdmEntityContainer="Goodna_TempleEntities">
+          <EntitySetMapping Name="M2000_WP_GOODNA_USER_ACCOUNTS">
+            <EntityTypeMapping TypeName="Goodna_TempleModel.M2000_WP_GOODNA_USER_ACCOUNTS">
+              <MappingFragment StoreEntitySet="M2000_WP_GOODNA_USER_ACCOUNTS">
                 <ScalarProperty Name="EMP_NUMBER" ColumnName="EMP_NUMBER" />
-                <ScalarProperty Name="EMP_FIRSTNAME" ColumnName="EMP_FIRSTNAME" />
-                <ScalarProperty Name="EMP_SURNAME" ColumnName="EMP_SURNAME" />
-                <ScalarProperty Name="EMP_DISPLAYNAME" ColumnName="EMP_DISPLAYNAME" />
-                <ScalarProperty Name="EMP_NIC" ColumnName="EMP_NIC" />
-                <ScalarProperty Name="EMP_EMAIL" ColumnName="EMP_EMAIL" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ALI_INNER_EMP_DSG">
-            <EntityTypeMapping TypeName="WEB_API2.ALI_INNER_EMP_DSG">
-              <MappingFragment StoreEntitySet="ALI_INNER_EMP_DSG">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="EMP_NUMBER" ColumnName="EMP_NUMBER" />
-                <ScalarProperty Name="DSG_ID" ColumnName="DSG_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ALI_LOGINDTLS">
-            <EntityTypeMapping TypeName="WEB_API2.ALI_LOGINDTLS">
-              <MappingFragment StoreEntitySet="ALI_LOGINDTLS">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="USR_NAME" ColumnName="USR_NAME" />
+                <ScalarProperty Name="PSSWORD" ColumnName="PSSWORD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

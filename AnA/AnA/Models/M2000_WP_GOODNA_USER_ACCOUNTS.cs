@@ -12,10 +12,11 @@ namespace AnA.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ALI_LOGINDTLS
+    public partial class M2000_WP_GOODNA_USER_ACCOUNTS
     {
-        public int id { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        public string EMP_NUMBER { get; set; }
+        public string EMAIL { get; set; }
+        public string USR_NAME { get; set; }
+        public string PSSWORD { get; set; }
     }
 }
