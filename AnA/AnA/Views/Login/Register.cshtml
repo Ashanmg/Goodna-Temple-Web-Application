@@ -1,4 +1,4 @@
-﻿@model AnA.ViewModel.Ali_RegisterViewModel
+﻿@model GoodnaTemple.Web.ViewModel.Ali_RegisterViewModel
 
 @{
     ViewBag.Title = "Register";
@@ -22,8 +22,7 @@
             </div>
             <div class="form-group">
                 @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "RegisterInput", @placeholder = "Confirm password" })<br />
-                @Html.ValidationMessageFor(m => m.ConfirmPassword)
-            </div>
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)/div>
             <div class="form-group">
                 <input type="submit" value="Register" class="ClickButton" />
             </div>

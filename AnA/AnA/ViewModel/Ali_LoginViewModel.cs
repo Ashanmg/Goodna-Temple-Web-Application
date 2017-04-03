@@ -4,9 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AnA.Models;
 
-namespace AnA.ViewModel
+namespace GoodnaTemple.Web.ViewModel
 {
     public class Ali_LoginViewModel
     {

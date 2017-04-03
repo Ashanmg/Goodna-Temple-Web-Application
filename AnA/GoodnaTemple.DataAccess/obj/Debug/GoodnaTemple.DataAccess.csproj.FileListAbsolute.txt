@@ -1,0 +1,8 @@
+C:\Users\ashan\Documents\GitHub\Goodna-Temple-Web-Application\AnA\GoodnaTemple.DataAccess\bin\Debug\GoodnaTemple.DataAccess.dll.config
+C:\Users\ashan\Documents\GitHub\Goodna-Temple-Web-Application\AnA\GoodnaTemple.DataAccess\bin\Debug\GoodnaTemple.DataAccess.dll
+C:\Users\ashan\Documents\GitHub\Goodna-Temple-Web-Application\AnA\GoodnaTemple.DataAccess\bin\Debug\GoodnaTemple.DataAccess.pdb
+C:\Users\ashan\Documents\GitHub\Goodna-Temple-Web-Application\AnA\GoodnaTemple.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\ashan\Documents\GitHub\Goodna-Temple-Web-Application\AnA\GoodnaTemple.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\ashan\Documents\GitHub\Goodna-Temple-Web-Application\AnA\GoodnaTemple.DataAccess\obj\Debug\GoodnaTemple.DataAccess.dll
+C:\Users\ashan\Documents\GitHub\Goodna-Temple-Web-Application\AnA\GoodnaTemple.DataAccess\obj\Debug\GoodnaTemple.DataAccess.pdb
+C:\Users\ashan\Documents\GitHub\Goodna-Temple-Web-Application\AnA\GoodnaTemple.DataAccess\obj\Debug\GoodnaTemple.DataAccess.csprojResolveAssemblyReference.cache

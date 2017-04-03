@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="01ee2b6fab1a48d9a442f7b6f885d966" Name="Diagram1">
-        <EntityTypeShape EntityType="Goodna_TempleModel.M2000_WP_GOODNA_USER_ACCOUNTS" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="2415e9e395ae4f93a5f1390adfc878ea" Name="Diagram1">
+        <EntityTypeShape EntityType="Goodna_Temple.M2000_WP_GOODNA_USER_ACCOUNTS" Width="1.625" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

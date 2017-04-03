@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AnA.Models
+namespace GoodnaTemple.DataAccess.Model
 {
     using System;
     using System.Collections.Generic;

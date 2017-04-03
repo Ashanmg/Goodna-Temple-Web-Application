@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace AnA.ViewModel
+namespace GoodnaTemple.Web.ViewModel
 {
     public class Ali_RegisterViewModel
     {

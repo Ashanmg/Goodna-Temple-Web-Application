@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Goodna_TempleModelStoreContainer" CdmEntityContainer="Goodna_TempleEntities">
+    <EntitySetMapping Name="M2000_WP_GOODNA_USER_ACCOUNTS">
+      <EntityTypeMapping TypeName="Goodna_TempleModel.M2000_WP_GOODNA_USER_ACCOUNTS">
+        <MappingFragment StoreEntitySet="M2000_WP_GOODNA_USER_ACCOUNTS">
+          <ScalarProperty Name="EMP_NUMBER" ColumnName="EMP_NUMBER" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="USR_NAME" ColumnName="USR_NAME" />
+          <ScalarProperty Name="PSSWORD" ColumnName="PSSWORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

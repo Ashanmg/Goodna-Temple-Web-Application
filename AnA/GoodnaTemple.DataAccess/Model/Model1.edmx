@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Goodna_TempleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Goodna_Temple.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Goodna_Temple.dbo.M2000_WP_GOODNA_USER_ACCOUNTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="M2000_WP_GOODNA_USER_ACCOUNTS">
@@ -16,7 +16,7 @@ warning 6002: The table/view 'Goodna_Temple.dbo.M2000_WP_GOODNA_USER_ACCOUNTS' d
           <Property Name="USR_NAME" Type="varchar" MaxLength="60" />
           <Property Name="PSSWORD" Type="varchar" MaxLength="300" />
         </EntityType>
-        <EntityContainer Name="Goodna_TempleModelStoreContainer">
+        <EntityContainer Name="Goodna_TempleStoreContainer">
           <EntitySet Name="M2000_WP_GOODNA_USER_ACCOUNTS" EntityType="Self.M2000_WP_GOODNA_USER_ACCOUNTS" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [M2000_WP_GOODNA_USER_ACCOUNTS].[EMP_NUMBER] AS [EMP_NUMBER], 
@@ -30,7 +30,7 @@ FROM [dbo].[M2000_WP_GOODNA_USER_ACCOUNTS] AS [M2000_WP_GOODNA_USER_ACCOUNTS]</D
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Goodna_TempleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Goodna_Temple" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="M2000_WP_GOODNA_USER_ACCOUNTS">
           <Key>
             <PropertyRef Name="EMP_NUMBER" />
@@ -48,9 +48,9 @@ FROM [dbo].[M2000_WP_GOODNA_USER_ACCOUNTS] AS [M2000_WP_GOODNA_USER_ACCOUNTS]</D
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Goodna_TempleModelStoreContainer" CdmEntityContainer="Goodna_TempleEntities">
+        <EntityContainerMapping StorageEntityContainer="Goodna_TempleStoreContainer" CdmEntityContainer="Goodna_TempleEntities">
           <EntitySetMapping Name="M2000_WP_GOODNA_USER_ACCOUNTS">
-            <EntityTypeMapping TypeName="Goodna_TempleModel.M2000_WP_GOODNA_USER_ACCOUNTS">
+            <EntityTypeMapping TypeName="Goodna_Temple.M2000_WP_GOODNA_USER_ACCOUNTS">
               <MappingFragment StoreEntitySet="M2000_WP_GOODNA_USER_ACCOUNTS">
                 <ScalarProperty Name="EMP_NUMBER" ColumnName="EMP_NUMBER" />
                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />

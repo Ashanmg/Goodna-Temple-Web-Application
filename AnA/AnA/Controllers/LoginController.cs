@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using AnA.ViewModel;
-using AnA.Models;
+using GoodnaTemple.Web.ViewModel;
+using GoodnaTemple.DataAccess.Model;
 
-namespace AnA.Controllers
+namespace GoodnaTemple.Web.Controllers
 {
     public class LoginController : Controller
     {
